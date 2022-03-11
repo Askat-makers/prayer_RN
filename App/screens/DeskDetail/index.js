@@ -1,0 +1,1 @@
+export {DeskDetail} from './DeskDetail';
