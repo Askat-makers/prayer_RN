@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import Logo from '../../../assets/images/logo.jpeg';
+import {StyleSheet, Text, View} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {CustomButton} from '../../components/CustomButton/CustomButton';
 import {CustomInput} from '../../components/CustomInput';
 
@@ -8,9 +8,16 @@ export const SignUp = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const onRegisterPressed = () => {
-    alert('register');
+    dispatch({
+      type: 'SIGN_UP',
+      payload: {
+        user: {email, password, name: username},
+        navigate: navigation.navigate,
+      },
+    });
   };
   const onSignInPressed = () => {
     navigation.navigate('SIGNIN');

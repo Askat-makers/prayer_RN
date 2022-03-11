@@ -64,7 +64,7 @@ export const PrayerDetail = ({route, navigation}) => {
   }, [dispatch, route.params.id]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.nav}>
           <Icon
@@ -139,6 +139,9 @@ export const PrayerDetail = ({route, navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
   header: {
     backgroundColor: '#BFB393',
     paddingHorizontal: 15,
@@ -180,7 +183,6 @@ const styles = StyleSheet.create({
     borderColor: '#E5E5E5',
     width: '50%',
     height: 113,
-    // justifyContent: 'center',
   },
   eventTitle: {
     color: '#BFB393',

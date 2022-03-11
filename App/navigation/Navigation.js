@@ -2,7 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {DeskDetail} from '../screens/DeskDetail';
+import {DeskDetailTabs} from '../screens/DeskDetail';
 import {Desks} from '../screens/Desks';
 import {CreateDesk} from '../screens/Desks/components';
 import {PrayerDetail} from '../screens/PrayerDetail';
@@ -15,9 +15,9 @@ export const Navigation = () => {
   const isSignedIn = useSelector(state => state.AuthReducer.isSignedIn);
 
   useEffect(() => {
-    console.log('bbbb');
     dispatch({type: 'IS_SIGNED_IN'});
   }, [dispatch]);
+  console.log(isSignedIn);
 
   return (
     <NavigationContainer>
@@ -26,7 +26,7 @@ export const Navigation = () => {
           <>
             <Stack.Screen name="DESKS" component={Desks} />
             <Stack.Screen name="ADD_DESK" component={CreateDesk} />
-            <Stack.Screen name="DESK_DETAIL" component={DeskDetail} />
+            <Stack.Screen name="DESK_DETAIL" component={DeskDetailTabs} />
             <Stack.Screen name="PRAYER_DETAIL" component={PrayerDetail} />
           </>
         ) : (

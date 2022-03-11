@@ -1,4 +1,4 @@
-import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -10,8 +10,8 @@ export const DeskDetail = ({route, navigation}) => {
   const {notAnsweredPrayers, answeredPrayers} = useSelector(
     state => state.ColumnReducer,
   );
-  const [id] = useState(route.params.id);
-  const [title] = useState(route.params.title);
+  console.log(route);
+  const [id] = useState(route.params.params.id);
   const [prayerTitle, setPrayerTitle] = useState('');
   const [isShowAnsweredPrayers, setIsShowAnsweredPrayers] = useState(false);
 
@@ -39,15 +39,7 @@ export const DeskDetail = ({route, navigation}) => {
   }, [dispatch, id]);
 
   return (
-    <SafeAreaView>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>{title}</Text>
-        <TouchableOpacity>
-          <View style={styles.headerRight}>
-            <Icon name="settings" color="#72a8bc" size={30} />
-          </View>
-        </TouchableOpacity>
-      </View>
+    <View style={styles.root}>
       <View style={styles.addPrayer}>
         <TouchableOpacity style={styles.addBtn} onPress={onAddPrayerPressed}>
           <Icon name="add" color="#72a8bc" size={30} />
@@ -96,34 +88,13 @@ export const DeskDetail = ({route, navigation}) => {
           />
         </View>
       )}
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e5e5e5',
-    borderStyle: 'solid',
-    paddingVertical: 22,
-    marginBottom: 10,
-  },
-  headerTitle: {
-    fontSize: 17,
-    color: '#514D47',
-    fontWeight: 'bold',
-    lineHeight: 20,
-  },
-  headerBtn: {
-    fontSize: 20,
+  root: {
+    backgroundColor: 'white',
   },
   addPrayer: {
     display: 'flex',

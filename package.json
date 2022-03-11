@@ -12,6 +12,9 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.16.1",
     "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-community/viewpager": "^5.0.11",
+    "@react-navigation/bottom-tabs": "^6.2.0",
+    "@react-navigation/material-top-tabs": "^6.1.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
     "axios": "^0.26.0",
@@ -26,6 +29,7 @@
     "react-native-swipe-list-view": "^3.2.9",
     "react-native-swipe-to-choice": "^0.1.1",
     "react-native-swipeout": "^2.3.6",
+    "react-native-tab-view": "^3.1.1",
     "react-native-vector-icons": "^9.1.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",

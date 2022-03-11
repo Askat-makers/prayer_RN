@@ -64,9 +64,9 @@ export const Desks = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   header: {
-    // marginTop: 50,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

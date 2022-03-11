@@ -19,6 +19,12 @@ export const AuthReducer = (state = initState, action) => {
         isSignInFailed: true,
         isSignInFailedMessage: action.payload,
       };
+    case 'SIGN_UP_SUCCESS':
+      return {
+        ...state,
+        user: action.payload,
+        isSignedIn: true,
+      };
     default:
       return state;
   }

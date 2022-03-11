@@ -78,12 +78,6 @@ export const ColumnReducer = (state = initState, action) => {
           prayer => prayer.id !== action.payload,
         ),
       };
-    // case 'SIGN_IN_ERROR':
-    //   return {
-    //     ...state,
-    //     isSignInFailed: true,
-    //     isSignInFailedMessage: action.payload,
-    //   };
     default:
       return state;
   }

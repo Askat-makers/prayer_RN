@@ -1,5 +1,5 @@
 import {spawn, call, all} from '@redux-saga/core/effects';
-import {IsSignedInSaga, SignInSaga} from './AuthSagas';
+import {IsSignedInSaga, SignInSaga, SignUpSaga} from './AuthSagas';
 import {
   addDeskSaga,
   addPrayerSaga,
@@ -15,6 +15,7 @@ import {
 export function* rootSaga() {
   const sagas = [
     SignInSaga,
+    SignUpSaga,
     IsSignedInSaga,
     getColumnsSaga,
     addDeskSaga,
